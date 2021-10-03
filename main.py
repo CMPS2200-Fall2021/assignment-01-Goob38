@@ -6,11 +6,27 @@ See assignment-01.pdf for details.
 
 def foo(x):
     ### TODO
-    pass
+    if x <= 1:
+        return x
+    else:
+        return foo(x-1) + foo(x-2)
 
 def longest_run(mylist, key):
     ### TODO
-    pass
+    count = 0
+
+    longest = 0
+
+    for num in mylist:
+        if num== key:
+            count += 1
+        else:
+            if (longest < count):
+                longest = count
+                count = 0
+            else:
+                count = 0
+    return max(longest, count)
 
 
 class Result:
